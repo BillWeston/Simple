@@ -1,7 +1,7 @@
 %% function initInflow
 % Useful as InitFcn for Inflow block mask.
 % By Bill Weston bill.weston@embeduk.com
-% Copyright Embed Ltd 2017
+% Copyright Bill Weston 2017
 function initInflow
 
 % If we are running return straight away - can't alter structure

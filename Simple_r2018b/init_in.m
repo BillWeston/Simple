@@ -2,7 +2,7 @@
 %% function init_in 
 % Useful to initialise a domain-specific Simple inflow block.
 % By Bill Weston bill.weston@embeduk.com
-% Copyright Embed Ltd 2017
+% Copyright Bill Weston 2017
 function init_in
 
 block = gcbh;                     

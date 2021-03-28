@@ -2,7 +2,7 @@
 % Initialises Simulink Outflow Block.
 % Should be init callback of Outflow block mask
 % By Bill Weston bill.weston@embeduk.com
-% Copyright Embed Ltd 2017
+% Copyright Bill Weston 2017
 function initOutflow
 
 % If we are running return straight away - can't alter structure
