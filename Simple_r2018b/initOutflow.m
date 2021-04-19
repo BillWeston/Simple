@@ -118,7 +118,22 @@ for iInflow = 1:nInflows
         gain = gains(iInflow);
         set(hGain, 'Gain', '666');
         set(hGain,'Name',gainName);
-        set(hGain, 'Gain', num2str(gain));
+        %% TODO: make gain array sense how long it should be.
+        % [k 1 1]  because don't want signed capacitance and conductance.
+        % I probably do want reflected properties.
+        parent = get_param(gcbh,'Parent');
+        flowNameString = get_param(parent,'Flow');
+        gain2 = gain*gain;
+        gainFirst = num2str(gain);
+        gainSquared = num2str(gain2);
+        switch flowNameString
+            case 'I'
+                 gainStr = [ '[' gainFirst ' ' gainSquared ' ' gainSquared ' ' gainFirst ']' ];
+            otherwise
+                 gainStr = [ '[' gainFirst ' ' gainSquared ']' ];
+        end
+                
+        set(hGain, 'Gain', gainStr);
         set(hGain,'Orientation',disOrientation);
         posGain = posInflow + offsetFlowGain;
         set(hGain, 'Position', posGain);
