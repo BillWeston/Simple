@@ -1,6 +1,12 @@
 # Simple
 This is a Simulink library and a few helper m scripts for lumped parameter modelling.
 
+The helper functions run as init functions on the blocks to create a chain of goto/from blocks communicating the flow signals around the network.
+The visible signals represent the flows, but when measured with a scope actually transmit the level variable (like with a scope in real life!).
+To each visible level signal corresponds a goto flow signal going back in the opposite direction.  
+Fan out of level signals from a source corresponds to sum of flows at the output of the source block.  
+The library implements this with the scripts and helper "Inflow" and "Outflow" blocks.
+
 The subsystems in the library mosly represent the usual suspect components in each domain:
 Resistors, Capacitors, Inductors, Transistors in the Electrical domain
 Motors Springs Dampers CLutches in the driveline domain
